@@ -1,4 +1,23 @@
-# ZXing C++ Port
+# ZXing C++ Port with Python bindings
+This project is forked from https://github.com/glassechidna/zxing-cpp to add Python bindings.
+
+# Installation
+pip install git+https://github.com/yuriiz/zxing-cpp.git
+
+# Usage
+```
+from PIL import Image
+from zxing import decode
+
+img = Image.open('qrcode.png')
+result = decode(img.width, img.height, 4, img.convert('RGBA').tostring())
+```
+
+# Testing
+```
+cd zxing-cpp
+python setup.py test
+```
 
 [![Build Status](https://travis-ci.org/glassechidna/zxing-cpp.svg?branch=master)](https://travis-ci.org/glassechidna/zxing-cpp)
 
